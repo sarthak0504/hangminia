@@ -1,5 +1,5 @@
 class Player{
-    int Heart;
+    int Heart=5;
 }
 
 class Singleplayer extends Player{

@@ -1,8 +1,14 @@
 class Guess {
 
-    public void Check(){
+    public void Check(String Movie) {
 
     }
+
+}
+
+class Blanks {
+
+    
 
 }
 

@@ -53,6 +53,14 @@ public class Main {
                 char[] movieName = console.readPassword("Enter the Movie: "); // For Entering Movie Name
                 String Movie = new String(movieName);
 
+                System.out.println("\n");
+
+                if(Turn%2==0)
+                System.out.println(inf.Player2 + ": ");
+                else
+                System.out.println(inf.Player1 + ": ");
+
+                
                 
 
             }
