@@ -7,13 +7,14 @@ public class Main {
         Console console = System.console();
         printMessage msg = new printMessage();
         Info inf = new Info();
+        Blanks bl = new Blanks();
 
         int Mode;
         int Turn;
         int MaxTurn = 2;
 
-        msg.printStarting();         // To print Welcome
-        msg.printModeInfo();         // To print info about modes 
+        msg.printStarting(); // To print Welcome
+        msg.printModeInfo(); // To print info about modes
 
         do {
 
@@ -40,28 +41,33 @@ public class Main {
             inf.Player1 = sc.next();
             inf.printInst(2);
             inf.Player2 = sc.next();
-            System.out.print("\n");  
-
+            System.out.print("\n");
 
             for (Turn = 1; Turn <= MaxTurn; Turn++) {
-                
-                if(Turn%2==0)
-                System.out.println(inf.Player1 + ": ");
+
+                if (Turn % 2 == 1)
+                    System.out.println(inf.Player1 + ": ");
                 else
-                System.out.println(inf.Player2 + ": ");
+                    System.out.println(inf.Player2 + ": ");
 
                 char[] movieName = console.readPassword("Enter the Movie: "); // For Entering Movie Name
                 String Movie = new String(movieName);
+                StringBuilder BlankMovie = new StringBuilder(Movie);
+
+                System.out.print("\n");
+
+                bl.setBlank(Movie, BlankMovie);
+
+                System.out.println(BlankMovie);
 
                 System.out.println("\n");
 
-                if(Turn%2==0)
-                System.out.println(inf.Player2 + ": ");
+                if (Turn % 2 == 1)
+                    System.out.println(inf.Player2 + ": ");
                 else
-                System.out.println(inf.Player1 + ": ");
+                    System.out.println(inf.Player1 + ": ");
 
-                
-                
+                bl.Check(Movie, 5, BlankMovie);
 
             }
 
